@@ -1,3 +1,4 @@
+from decimal import Decimal
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -9,10 +10,17 @@ e_charge = 1.602176634e-19
 k_B = 1.380649e-23
 R = 8.314
 U_B = 6e3
+T = 1000
+m_F= 1.1956e-24
+g= 100e-9
 
 
 def gamma(x):
     return 1/np.sqrt(1-(x/c)**2)
+
+def format_e(n):
+    a = '%E' % n
+    return a.split('E')[0].rstrip('0').rstrip('.') + 'E' + a.split('E')[1]
 
 Lambda =np.array([150,200,250,300,350,400,450,500,550,600])
 U_0 = np.array([5.97, 3.90, 2.66, 1.83, 1.24, 0.80, 0.46, 0.18, 0, 0])
@@ -73,3 +81,15 @@ for i in range(2):
 
     print(f'List of ranges for d= {d[i]} is {r}')
     r = [0]
+
+# f)
+v_F = np.sqrt((3*k_B*T)/(m_F))
+Lambda_F = h/(m_F*v_F)
+alpha_F = np.arcsin(Lambda_F/g)
+x_F = np.tan(alpha_F) * 1.5
+
+
+format_e(Decimal(Lambda_F)) # Formats to scientific notation
+print(f'Wellenlänge von F ist: {Lambda_F}')
+print(f'Winkel: {alpha_F}')
+print(f'Maximum: {x_F}')
