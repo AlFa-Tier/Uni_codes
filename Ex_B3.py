@@ -44,11 +44,9 @@ plt.show()'''
 '''Nummer 2'''
 
 
-
+# Nummer 2
 
 v2 = c * np.sqrt(1-(1/(1+(U_B*e_charge)/(c**2 * m_e))**2))
-
-
 
 
 print(f'Relativistische Geschw.: {v2}')
@@ -58,18 +56,16 @@ Wavelength = h/(m_e * v2)
 print(f'Wavelength: {Wavelength}')
 
 
-# Nummer 3
-
-r = [0]
-d= (1.2e-10,2.1e-10)
-
-
-
 for i in range(2):
     x = 1
-    while max(r) < 0.1:
-        alpha = 2* np.arcsin((x*Wavelength)/2*d[i])
+    r = [0]
+    d= (1.2e-10,2.1e-10)
+    while True:
+        alpha = 2* np.arcsin((x*Wavelength)/(2*d[i]))
         new_r = 0.25 * np.tan(alpha)
+
+        if new_r > 0.1: break
+
         r.append(new_r)
         x+= 1
 
