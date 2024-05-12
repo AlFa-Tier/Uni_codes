@@ -31,17 +31,19 @@ print(f'Der gemesene Wert für h lautet: {s}')
 print(f'Gemesene Grenzfreq.: {f_0}')
 
 
-'''plt.plot(Lambda,U_0)
+"""plt.plot(Lambda,U_0)
 plt.ylabel(rf'U_0 in V')
 plt.xlabel(rf'lambda in nm')
 plt.close()
 
 plt.plot(f,U_0)
 plt.ylabel(rf'U_0 in V')
-plt.xlabel(rf'f in Hz')
-plt.show()'''
+plt.xlabel(rf'f in Hz')"""
 
-'''Nummer 2'''
+
+plt.show()
+
+
 
 
 # Nummer 2
