@@ -13,5 +13,5 @@ m_H = 1.66053906892E-27     #Mass Hydrogen atom
 v_0 = R_inf*((1/4) - (1/9))
 delta_v = ((2*v_0)/c)*np.sqrt((2*k_B*T*np.emath.logn(np.e, 2))/(m_H))
 
-#print(f'{v_0:.05E}')
-#print (f'{delta_v:.04E}')
+print(f'{v_0:.05E}')
+print (f'{delta_v:.04E}')
